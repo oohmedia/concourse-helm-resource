@@ -202,11 +202,15 @@ setup_resource() {
 setup_aws_credentials(){
   payload = $1
   # Parse AWS parameters
+  echo "Initializing AWS Credentials"
   aws_access_key_id=$(jq -r '.source.aws_access_key_id // ""' < $payload)
   aws_secret_access_key=$(jq -r '.source.aws_secret_access_key // ""' < $payload)
   if [ ! -z "$aws_access_key_id" ] && [ ! -z "$aws_secret_access_key" ];
   then
     export AWS_ACCESS_KEY_ID=$aws_access_key_id
     export AWS_SECRET_ACCESS_KEY=$aws_secret_access_key
-    echo "Configured AWS Access Keys"
+    echo "AWS Access Keys Configured"
+  else
+    echo "AWS Access Keys Not Found"
+  fi
 }

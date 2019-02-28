@@ -200,7 +200,7 @@ setup_resource() {
 }
 
 setup_aws_credentials(){
-  payload = $1
+  payload=$1
   # Parse AWS parameters
   echo "Initializing AWS Credentials"
   aws_access_key_id=$(jq -r '.source.aws_access_key_id // ""' < $payload)

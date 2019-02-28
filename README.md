@@ -20,6 +20,8 @@ resource_types:
 * `cluster_ca`: *Optional.* Base64 encoded PEM. Required if `cluster_url` is https.
 * `use_aws_iam_authenticator`: *Optional.* If true, the aws_iam_authenticator, required for connecting with EKS, is used.
 * `aws_eks_cluster_name`: *Optional.* the AWS EKS cluster name, required when use_aws_iam_authenticator is true.
+* `aws_access_key_id`: *Optional.* AWS Access Key ID use with use_aws_iam_authenticator.
+* `aws_secret_access_keyd`: *Optional.* AWS Access Key ID use with use_aws_iam_authenticator.
 * `token`: *Optional.* Bearer token for Kubernetes.  This, 'token_path' or `admin_key`/`admin_cert` are required if `cluster_url` is https.
 * `admin_key`: *Optional.* Base64 encoded PEM. Required if `cluster_url` is https and no `token` or 'token_path' is provided.
 * `admin_cert`: *Optional.* Base64 encoded PEM. Required if `cluster_url` is https and no `token` or 'token_path' is provided.

@@ -13,6 +13,9 @@ source=$1
 payload=$(mktemp helm-resource-request.XXXXXX)
 cat > $payload <&0
 
+# Configure AWS Credentials
+setup_aws_credentials $payload
+
 # Prepare
 setup_resource $payload $source
 echo "Resource setup successful."
